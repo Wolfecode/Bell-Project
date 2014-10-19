@@ -63,7 +63,6 @@ public class PlaySound {
                 e.printStackTrace();
             }
             if (nBytesRead >= 0) {
-                @SuppressWarnings("unused")
                 int nBytesWritten = sourceLine.write(abData, 0, nBytesRead);
             }
         }

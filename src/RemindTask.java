@@ -16,7 +16,7 @@ public class RemindTask extends TimerTask {
 	}
 
 	public void run() {
-		System.out.format("Time's up!%n");
+		System.out.println("Time's up!%n");
 
 			System.out.println("fired off an event!");
 			Reminded = true;

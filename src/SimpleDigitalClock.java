@@ -54,7 +54,6 @@ public class SimpleDigitalClock {
             t1.start();
         }
 
-        @Override
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
 
@@ -94,7 +93,6 @@ public class SimpleDigitalClock {
 
         }
 
-        @Override
         public Dimension getPreferredSize() {
             return new Dimension(200, 150);
         }

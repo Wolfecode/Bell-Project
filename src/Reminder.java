@@ -67,7 +67,7 @@ public class Reminder {
 				Timer myTimer = new Timer();
 				RemindTask rt = new RemindTask();
 				myTimer.schedule(rt, time);
-				System.out.format("Task scheduled.%n");
+				System.out.println("Task scheduled.%n");
 			} else {
 				System.out.println("Time has already passed");
 			}
