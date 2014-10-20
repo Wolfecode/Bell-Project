@@ -6,8 +6,9 @@ public class BellInterface extends JPanel {
 	private JTextField input;
 	private JButton on;
 	private JButton off;
-	public BellInterface(){
-	
+
+	public BellInterface() {
+
 		on = new JButton("On");
 		off = new JButton("Off");
 

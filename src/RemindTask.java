@@ -18,10 +18,10 @@ public class RemindTask extends TimerTask {
 	public void run() {
 		System.out.println("Time's up!%n");
 
-			System.out.println("fired off an event!");
-			Reminded = true;
-			PlaySound s = new PlaySound();
-			s.playSound("BackinBlack.wav");
+		System.out.println("fired off an event!");
+		Reminded = true;
+		PlaySound s = new PlaySound();
+		s.playSound("BackinBlack.wav");
 
 		try {
 			timer.cancel(); // Terminate the timer thread

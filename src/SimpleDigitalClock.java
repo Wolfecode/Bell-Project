@@ -13,92 +13,91 @@ import javax.swing.WindowConstants;
 
 public class SimpleDigitalClock {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        JFrame f = new JFrame();
-        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        DigitalClock myClock = new DigitalClock();
-        f.add(myClock);
-        f.pack();
-        f.setVisible(true);
-        
-  
-        	
-    }
+		JFrame f = new JFrame();
+		f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		DigitalClock myClock = new DigitalClock();
+		f.add(myClock);
+		f.pack();
+		f.setVisible(true);
 
-    static class DigitalClock extends JPanel {
+	}
 
-        String stringTime;
-        int hour, minute, second;
+	static class DigitalClock extends JPanel {
 
-        String correctionHour = "";
-        String correctionMinute = "";
-        String correctionSecond = "";
+		String stringTime;
+		int hour, minute, second;
 
-        public void setStringTime(String xyz) {
-            this.stringTime = xyz;
-        }
+		String correctionHour = "";
+		String correctionMinute = "";
+		String correctionSecond = "";
 
-        public int findMinimumBetweenTwoNumbers(int a, int b) {
-            return (a <= b) ? a : b;
-        }
+		public void setStringTime(String xyz) {
+			this.stringTime = xyz;
+		}
 
-        DigitalClock() {
+		public int findMinimumBetweenTwoNumbers(int a, int b) {
+			return (a <= b) ? a : b;
+		}
 
-            Timer t1 = new Timer(1000, new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
+		DigitalClock() {
 
-                    repaint();
-                }
-            });
-            t1.start();
-        }
+			Timer t1 = new Timer(1000, new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
 
-        public void paintComponent(Graphics g) {
-            super.paintComponent(g);
+					repaint();
+				}
+			});
+			t1.start();
+		}
 
-            Calendar now = Calendar.getInstance();
-            hour = now.get(Calendar.HOUR_OF_DAY);
-            minute = now.get(Calendar.MINUTE);
-            second = now.get(Calendar.SECOND);
+		public void paintComponent(Graphics g) {
+			super.paintComponent(g);
 
-            if (hour < 10) {
-                this.correctionHour = "0";
-            }
-            if (hour >= 10) {
-                this.correctionHour = "";
-            }
+			Calendar now = Calendar.getInstance();
+			hour = now.get(Calendar.HOUR_OF_DAY);
+			minute = now.get(Calendar.MINUTE);
+			second = now.get(Calendar.SECOND);
 
-            if (minute < 10) {
-                this.correctionMinute = "0";
-            }
-            if (minute >= 10) {
-                this.correctionMinute = "";
-            }
+			if (hour < 10) {
+				this.correctionHour = "0";
+			}
+			if (hour >= 10) {
+				this.correctionHour = "";
+			}
 
-            if (second < 10) {
-                this.correctionSecond = "0";
-            }
-            if (second >= 10) {
-                this.correctionSecond = "";
-            }
-          //Time Detector // if(hour == 9 && minute == 2 && second < 10)System.out.println("Hello");
-  
-            setStringTime(correctionHour + hour + ":" + correctionMinute+ minute + ":" + correctionSecond + second);
-            g.setColor(Color.BLACK);
-            int length = findMinimumBetweenTwoNumbers(this.getWidth(),this.getHeight());
-            Font myFont = new Font("SansSerif", Font.PLAIN, length / 5);
-            g.setFont(myFont);
-            g.drawString(stringTime, (int) length/6, length/2);
+			if (minute < 10) {
+				this.correctionMinute = "0";
+			}
+			if (minute >= 10) {
+				this.correctionMinute = "";
+			}
 
-        }
+			if (second < 10) {
+				this.correctionSecond = "0";
+			}
+			if (second >= 10) {
+				this.correctionSecond = "";
+			}
+			// Time Detector // if(hour == 9 && minute == 2 && second <
+			// 10)System.out.println("Hello");
 
-        public Dimension getPreferredSize() {
-            return new Dimension(200, 150);
-        }
-        
-    }
-    
+			setStringTime(correctionHour + hour + ":" + correctionMinute
+					+ minute + ":" + correctionSecond + second);
+			g.setColor(Color.BLACK);
+			int length = findMinimumBetweenTwoNumbers(this.getWidth(),
+					this.getHeight());
+			Font myFont = new Font("SansSerif", Font.PLAIN, length / 5);
+			g.setFont(myFont);
+			g.drawString(stringTime, (int) length / 6, length / 2);
 
+		}
+
+		public Dimension getPreferredSize() {
+			return new Dimension(200, 150);
+		}
+
+	}
 
 }

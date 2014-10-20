@@ -20,10 +20,10 @@ public class Reminder {
 	}
 
 	public static void main(String args[]) throws IOException {
-		
+
 		SimpleDigitalClock digitalClock = new SimpleDigitalClock();
 		BellInterface bellInterface = new BellInterface();
-		
+
 		// Get the Date corresponding to 11:01:00 pm today.
 		String answer = "";
 
