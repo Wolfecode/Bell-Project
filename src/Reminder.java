@@ -16,7 +16,6 @@ public class Reminder {
 
 	public Reminder(int seconds) {
 		timer = new Timer();
-		// timer.schedule(new RemindTask(), seconds * 1000);
 	}
 
 	public static void main(String args[]) throws IOException {
